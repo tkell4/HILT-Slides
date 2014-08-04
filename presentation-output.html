@@ -1,0 +1,784 @@
+<!--
+Google IO 2012 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahe <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Introduction to Web Design</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="all" href="theme/css/app.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+<!-- <slide class="logoslide nobackground">
+  <article class="flexbox vcenter">
+    <span><img src="images/google_developers_logo.png"></span>
+  </article>
+</slide>
+ -->
+<slide class="title-slide segue nobackground">
+  <aside class="gdbar"><img src="images/symbol.png"></aside>
+  <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+  <hgroup class="auto-fadein">
+    <h1 data-config-title><!-- populated from slide_config.json --></h1>
+    <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+    <p data-config-presenter><!-- populated from slide_config.json --></p>
+  </hgroup>
+</slide>
+
+
+<slide class="segue dark nobackground" >
+  
+    <aside class="gdbar"><img src="images/symbol.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>A Little History Lesson</h2>
+      <h3>From Internet to the World Wide Web</h3>
+    </hgroup>
+  
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Problems:</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>How can we make computers connect and talk to one another? For this to happen we need:</p>
+<ul class="build">
+<li>
+<p>Common language at the level of bits</p>
+</li>
+<li>
+<p>Physical connection between computers</p>
+</li>
+<li>
+<p>Process for sending and processing data</p>
+</li>
+</ul></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Language</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p><img src="images/ascii_t_from Computer History Museum.gif"></p>
+<ul class="build">
+<li>
+<p>Computers encode letters and numbers as sequences of 0's and 1's. Need a shared encoding system in order to share data between computers</p>
+</li>
+<li>
+<p>In 1963, ASCII encoding was developed so machines by different manufacturers could share data</p>
+</li>
+<li>
+<p>Current standard is Unicode, with most of the web encoded in UTF-8</p>
+</li>
+</ul></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Connection</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><div class="image-block">
+    <figure>
+        <img src="images/1971_net_map_t arpanet at launch computer history museum.gif">
+        <figcaption>ARPANet at launch, 1971</figcaption>
+    </figure>
+    <figure>
+        <img src="images/pdp-10_t-types of computers being linked - from computer history museum.jpg">
+        <figcaption>Computers that built the Internet</figcaption>
+    </figure>
+    <figure>
+        <img src="images/1992_nsfnet_backbone_t from computer history museum.gif">
+        <figcaption>NSFnet backbone in 1992</figcaption>
+    </figure>
+</div>
+
+<ul class="build">
+<li>1965: First "wide area network connection"</li>
+<li>1971: ARPANet launches with 14 nodes</li>
+<li>1983: ARPANet becomes public facing network, with 45 hosts</li>
+<li>1988: The first WORM. The Internet has an estimated 60,000 hosts</li>
+<li>1990: ARPANet shuts down, but the Internet now has 300,000 hosts </li>
+</ul></article>
+ 
+</slide>
+
+<slide class="dark nobackground quote" >
+  
+    <hgroup>
+      <h2>Origin Story</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>In the Beginning, ARPA created the ARPANET.
+And the ARPANET was without form and void.
+And darkness was upon the deep.</p>
+<p>And the spirit of ARPA moved upon the face of the network </p>
+<p>And ARPA said, 'Let there be a protocol,' and there was a protocol. And ARPA saw that it was good.</p>
+<p>And ARPA said, 'Let there be more protocols,' and it was so. And ARPA saw that it was good.</p>
+<p>And ARPA said, 'Let there be more networks,' and it was so.</p>
+<p>-- Danny Cohen</p>
+<footer class="source">Museum Computer Network, <a href="http://www.computerhistory.org/internet_history/">http://www.computerhistory.org/internet_history/</a></footer></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Protocols and Networks</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul class="build">
+<li>
+<p>Protocols: ways of talking</p>
+</li>
+<li>
+<p>Networks: connected machines</p>
+</li>
+<li>
+<p>Internet as the network of networks</p>
+</li>
+</ul></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Internet as Physical</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><iframe width="560" height="300" src="//www.youtube.com/embed/FB1ZZplQ_34" frameborder="0" allowfullscreen></iframe></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>The World Wide Web</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p><img src="images/berners-lee_t from computer history museum.jpg"></p>
+<ul class="build">
+<li>1989: Tim Berners-Lee proposes a hypertext system for sharing data</li>
+<li>1992: MOSAIC web browser</li>
+<li>1994: CSS is proposed as styling language. Approved in 1996.</li>
+</ul></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Parts of the Web</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul class="build">
+<li>
+<p>HTTP Protocol</p>
+</li>
+<li>
+<p>HTML language</p>
+</li>
+<li>
+<p>URIs and URLs</p>
+</li>
+<li>
+<p>Linked Data</p>
+</li>
+<li>
+<p>Web Server and Client</p>
+</li>
+</ul></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Evolution of the Web</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul class="build">
+<li>
+<p>Web 1.0: First Generation</p>
+</li>
+<li>
+<p>Web 2.0: The Social Web</p>
+</li>
+<li>
+<p>Web 3.0: The Semantic Web</p>
+</li>
+</ul></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Why do we care?</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>Helps us create a mental model of the systems we are using</p>
+<p>Very useful when faced with new technologies</p>
+<p>Today we will be working with: </p>
+<ul class="build">
+<li>Text Editor to create an HTML file and a CSS file</li>
+<li>A Web Browser</li>
+<li>Github's Web Servers</li>
+</ul></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>A Word about Browsers</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul class="build">
+<li>
+<p>The browser uses the HTML, CSS, Java-script, image files, etc to generate the graphical view </p>
+</li>
+<li>
+<p>To keep things somewhat consistent, the different structural tags are styled generally consistently across browsers</p>
+</li>
+<li>
+<p>However, each browser uses different interpreters and so there is variance between browsers and between operating systems</p>
+</li>
+</ul></article>
+ 
+</slide>
+
+<slide class="segue dark nobackground" >
+  
+    <aside class="gdbar"><img src="images/symbol.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>HTML</h2>
+      <h3>Let's Write a Web Page</h3>
+    </hgroup>
+  
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Download Code Examples</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>Go to <a href="https://github.com/jerielizabeth">https://github.com/jerielizabeth</a></p>
+<p>Click on “Repositories” </p>
+<p>Select “HILT Code Examples” and Download Zip File</p></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Headers</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><pre class="prettyprint" data-lang="html">
+    &lt;h1>Top-Level Header&lt;/h1>
+    &lt;h2>Second-Level Header&lt;/h2>
+    &lt;h3>Third-Level Header&lt;/h3>
+    &lt;h4>Forth-Level Header&lt;/h4>
+    &lt;h5>Fifth-Level Header&lt;/h5>
+    &lt;h6>Sixth-Level Header&lt;/h6>
+</pre></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Standard Text Encodings</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><pre class="prettyprint smaller" data-lang="html">
+    &lt;p>Paragraphs text:&lt;/p>
+    &lt;p>Lorem ipsum dolor &lt;em>sit amet&lt;/em>, 
+    elitr concludaturque eu usu. Errem impedit facilis eu eam. 
+    &lt;strong>Graeco tacimates elaboraret&lt;/strong> no vis. 
+    &lt;a href="http://www.google.com">Link to Google&lt;/a>
+    Id quando nominati constituto vim. Vero accusam eum ex.&lt;/p>
+
+    &lt;blockquote>"Begin at the beginning," the King said, very gravely, 
+    "and go on till you come to the end: then stop."&lt;/blockquote>
+
+    &lt;ol>
+        &lt;li>Ordered List&lt;/li>
+    &lt;/ol>
+
+    &lt;ul>
+        &lt;li>Unordered List&lt;/li>
+    &lt;/ul>
+</pre></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Figures and Images</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><pre class="prettyprint smaller" data-lang="html">
+
+    &lt;figure>
+        &lt;img src="images/sf.jpg" 
+        alt="Moon setting over the San Francisco skyline. By Joe Parks">
+        &lt;figcaption>Caption for Image. &lt;a href="https://www.flickr.com/photos/parksjd/9123367798/in/photolist-eUcDoN-dzScgx-9r1YWE-
+        b7HmjZ-9m6gmu-9PjGgs-4X6kq9-7KSe8f-byfTLj-by84f2-8Vhmf1-hzdUHF-9rRADb-
+        c19dku-5J8WZy-aZFbdV-843wiR-9qySWt-9mA9Bp-b5oKxa-73PK9s-fB4tzX-bzqxbU-hUiq2E-
+        keLDPc-5TTbt5-avV3Lf-bDDP7j-2BrmVP-boqx9M-2AzJfG-btG3uS-96UofT-ex6mwr-7TM3AZ-
+        awUjwp-bzriGg-b2gwmx-9vW7sq-abiUne-aL8Pz2-9cnhG7-7EbheV-bj88k4-9qs6H6-bjSzTU-
+        hEkAuS-bc1rQr-byRJwp-eXFM6v">Image by Joe Parks&lt;/a>.&lt;/figcaption>
+    &lt;/figure>
+
+</pre></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Code</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><pre class="prettyprint" data-lang="html">
+
+    &lt;pre>
+        The formatting of the text 
+            within the "pre" tag is preserved.
+    &lt;/pre>
+
+</pre></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Tables</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><pre class="prettyprint" data-lang="html">
+    &lt;table>
+        &lt;tr>
+            &lt;th>Title of Column&lt;/th>
+            &lt;th>Title of Column&lt;/th>
+            &lt;th>Title of Column&lt;/th>
+        &lt;/tr>
+        &lt;tr>
+            &lt;td>Data Element&lt;/td>
+            &lt;td>Data Element&lt;/td>
+            &lt;td>Data Element&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+            &lt;td>More Data&lt;/td>
+            &lt;td>More Data&lt;/td>
+            &lt;td>More Data&lt;/td>
+        &lt;/tr>
+    &lt;/table>
+
+</pre></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Structuring the HTML Page</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><pre class="prettyprint" data-lang="html">
+
+&lt;!DOCTYPE html> 
+
+&lt;html lang="en"> 
+
+  &lt;head> 
+
+    &lt;meta charset=utf-8> 
+    &lt;title>A simple HTML5 page layout&lt;/title>
+    &lt;link rel="stylesheet" type="text/css" href="#"> 
+  &lt;/head>
+
+  &lt;body> 
+
+  &lt;/body>
+
+&lt;/html> 
+
+</pre></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Putting it all together</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p><a href="https://github.com/jerielizabeth/HILT-Code-Examples/blob/master/html/internal_structure.html">https://github.com/jerielizabeth/HILT-Code-Examples/blob/master/html/internal_structure.html</a></p></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>A Few Things to Consider</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul class="build">
+<li>
+<p>Web browser will display text even without HTML tags</p>
+</li>
+<li>
+<p>Descriptive HTML tags have advantages for both human and computer readers</p>
+</li>
+<li>
+<p>Best practice is to separate structure from presentation</p>
+</li>
+<li>
+<p>Browsers may be forgiving, but don't create code that looks like this: <a href="http://documents.adventistarchives.org/Periodicals/Forms/AllItems.aspx?RootFolder=%2fPeriodicals%2fAmSn&amp;FolderCTID=0x012000DDAC5B94CFBD234AB142FC5C311C732700042C85EA7C1C1A4DB8D75C62A7517A6E">http://documents.adventistarchives.org/Periodicals/Forms/AllItems.aspx?RootFolder=%2fPeriodicals%2fAmSn&amp;FolderCTID=0x012000DDAC5B94CFBD234AB142FC5C311C732700042C85EA7C1C1A4DB8D75C62A7517A6E</a></p>
+</li>
+</ul></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Now it's Your Turn</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul class="build">
+<li>
+<p>Create a Folder for the course</p>
+</li>
+<li>
+<p>Create a Folder for your web pages inside the course folder</p>
+</li>
+<li>
+<p>Using your text editor, create an HTML template with basic structural elements. Save as template.html </p>
+</li>
+<li>
+<p>Use that template to create your CV or personal page. Save as index.html</p>
+</li>
+</ul></article>
+ 
+</slide>
+
+<slide class="segue dark nobackground" >
+  
+    <aside class="gdbar"><img src="images/symbol.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Git and Github</h2>
+      <h3></h3>
+    </hgroup>
+  
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>What is Git?</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>Git is a version control system</p>
+<ul class="build">
+<li>
+<p>Keep track of versions of documents</p>
+</li>
+<li>
+<p>Maintain multiple versions across multiple locations </p>
+</li>
+<li>
+<p>Runs in the command line or terminal</p>
+</li>
+</ul></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>What is Github?</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>Github is a social network, hosting platform, and graphical interface of coders using Git.</p>
+<p><a href="http://www.github.com">github.com</a></p></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Key Concepts and Terms</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul class="build">
+<li>Repository</li>
+<li>Origin</li>
+<li>Clone</li>
+<li>Fork</li>
+<li>Pull</li>
+<li>Push</li>
+<li>Merge</li>
+<li>Branch</li>
+</ul></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Use Git and Github to Save Your Web Page</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>Step One: We need to tell git that our folder is a git repo.</p>
+<p>Step Two: Create the repo (the folder) on Github.</p>
+<p>Step Three: Tell your local repository about the one on Github’s servers.</p>
+<p>Step Four: Push your local files up to the git repository</p></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Use Git and Github to Publish Your Web Page</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>Step One: Create the gh-pages branch</p>
+<p>Step Two: Remove the template.html file from gh-pages</p>
+<p>Step Three: Push up to Github as gh-pages branch</p>
+<p>Step Four: Wait a few moments and go to [username].github.io/[repo-name]. </p>
+<p>Step Five: Marvel at your greatness.</p></article>
+ 
+</slide>
+
+<slide class="segue dark nobackground" >
+  
+    <aside class="gdbar"><img src="images/symbol.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>CSS</h2>
+      <h3>Making Websites Beautiful</h3>
+    </hgroup>
+  
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Why CSS</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul class="build">
+<li>
+<p>Control over the web page display</p>
+</li>
+<li>
+<p>Split between structure and presentation</p>
+</li>
+</ul></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Ways to Add CSS to a Web Page</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>Inline Citation:
+<pre class="prettyprint smaller" data-lang="html">
+&lt;body STYLE="background: #000000; color: #80c0c0"&gt;
+</pre></p>
+<p>Internal Style Sheets:
+<pre class="prettyprint smaller" data-lang="html">
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;I am an internal style sheet</title>
+&lt;style&gt;
+  &lt;!--
+    body { background: #000000; color: #80c0c0 }
+  --&gt;
+&lt;/style&gt;
+&lt;/head&gt;
+</pre></p>
+<p>External Style Sheets</p></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Why the Cascade in CSS?</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>Styles cascade down the document</p>
+<ul class="build">
+<li>
+<p>Set styles on generic and top-level tags, and those will apply to all nested instances</p>
+</li>
+<li>
+<p>The last style the computer processes is the style it will apply</p>
+</li>
+<li>
+<p>Work from generic to specific</p>
+</li>
+</ul></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Common Identifiers</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul class="build">
+<li>
+<p>font-family:</p>
+</li>
+<li>
+<p>font-size:</p>
+</li>
+<li>
+<p>width:</p>
+</li>
+<li>
+<p>float:</p>
+</li>
+<li>
+<p>padding:</p>
+</li>
+<li>
+<p>margin:</p>
+</li>
+<li>
+<p>border:</p>
+</li>
+</ul>
+<p>For more, look at <a href="http://dochub.io/#css/">http://dochub.io/#css/</a></p></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Adding CSS to the internal_structure.html file</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>See CSS styling in action</p>
+<p><a href="https://github.com/jerielizabeth/HILT-Code-Examples/tree/master/css">https://github.com/jerielizabeth/HILT-Code-Examples/tree/master/css</a></p></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>The Browser Reset</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>To avoid spending time fixing bugs caused by the browser default styling, it is common practice to "reset" the default styles</p>
+<p>Eric Meyer's reset is a standard option</p>
+<p><a href="http://meyerweb.com/eric/tools/css/reset/">http://meyerweb.com/eric/tools/css/reset/</a></p></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Add Styles to Your Web Page</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>Check to make sure you're working on the gh-pages branch</p>
+<ol class="build">
+<li>
+<p>Create a folder inside your website folder named "css"</p>
+</li>
+<li>
+<p>Create a file "style.css" and save it in the css folder</p>
+</li>
+<li>
+<p>Add a link to the style sheet in your index.html file</p>
+</li>
+</ol></article>
+ 
+</slide>
+
+<slide class="big" >
+  
+    <hgroup>
+      <h2>Push your Styles to Github</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>Give it a try</p></article>
+ 
+</slide>
+
+
+<slide class="thank-you-slide segue nobackground">
+  <aside class="gdbar right"><img src="images/symbol.png"></aside>
+  <article class="flexbox vleft auto-fadein">
+    <h2>&lt;Thank You!&gt;</h2>
+  </article>
+  <p class="auto-fadein" data-config-contact>
+    <!-- populated from slide_config.json -->
+  </p>
+</slide>
+
+<!-- <slide class="logoslide dark nobackground">
+  <article class="flexbox vcenter">
+    <span><img src="images/google_developers_logo_white.png"></span>
+  </article>
+</slide> -->
+
+<slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
